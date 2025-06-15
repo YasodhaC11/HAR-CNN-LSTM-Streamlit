@@ -13,6 +13,7 @@ A deep learning project that combines **Convolutional Neural Networks (CNN)** an
   - [2. Run Streamlit App](#2-run-streamlit-app)
   - [3. Upload Test CSV](#3-upload-test-csv)
 - [Project Structure](#project-structure)
+- [Model Training](#model-training)
 
 ## Features
 
@@ -62,6 +63,16 @@ Format: 561 features per row.
 Model returns activity predictions like WALKING, SITTING, STANDING, etc.
 You can download the result as a CSV file.
 
+## Model Training
+
+The model training and evaluation are done inside `har-project.ipynb`.  
+It includes:
+- Loading and reshaping sensor data
+- Label encoding
+- Model architecture (CNN + LSTM)
+- Training performance
+- Confusion matrix and classification report
+
 ## Project Structure
 ```har-cnn-lstm-streamlit/
 ├── app.py                 # Streamlit web app
@@ -69,4 +80,6 @@ You can download the result as a CSV file.
 ├── har_cnn_lstm_model.h5  # Trained model
 ├── requirements.txt       # Dependencies
 └── README.md              # Project documentation```
+
+
 
