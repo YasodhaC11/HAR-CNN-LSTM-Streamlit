@@ -1,24 +1,72 @@
-# Human Activity Recognition (HAR) using CNN + LSTM
+# Human Activity Recognition (HAR) Using CNN + LSTM
 
-This project performs Human Activity Recognition using wearable sensor data. It combines CNN for feature extraction and LSTM for learning temporal patterns. The final output is deployed using Streamlit.
+A deep learning project that combines **Convolutional Neural Networks (CNN)** and **Long Short-Term Memory (LSTM)** networks to classify physical human activities using wearable sensor data. The model is deployed via a user-friendly **Streamlit** web application.
 
-## 🔧 Tech Stack:
-- Python
-- TensorFlow/Keras
-- CNN + LSTM
+## Table of Contents
+
+- [Features](#features)
+- [Model](#model)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. Train the Model (Jupyter Notebook)](#1-train-the-model-jupyter-notebook)
+  - [2. Run Streamlit App](#2-run-streamlit-app)
+  - [3. Upload Test CSV](#3-upload-test-csv)
+- [Project Structure](#project-structure)
+
+## Features
+
+- CNN extracts local temporal features from time-series sensor data.
+- LSTM captures sequential (time-dependent) patterns.
+- Real-time prediction via Streamlit web interface.
+- Supports CSV uploads for batch predictions.
+- Downloadable results in CSV format.
+
+## Model
+
+- Architecture: `Conv1D → MaxPooling1D → Dropout → LSTM → Dense → Softmax`
+- Trained on the **UCI HAR Dataset** with 561 features per sample.
+- Achieved **~88% test accuracy**.
+
+## Prerequisites
+
+- Python 3.7 or higher
+- TensorFlow
 - Streamlit
+- NumPy
+- Pandas
 - Scikit-learn
-- Pandas, NumPy
 
-## 📊 Activities Classified:
-- WALKING
-- WALKING_UPSTAIRS
-- WALKING_DOWNSTAIRS
-- SITTING
-- STANDING
-- LAYING
+## Installation
 
-## 🚀 How to Run Locally:
-```bash
-pip install -r requirements.txt
-streamlit run app.py
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/har-cnn-lstm-streamlit.git
+   cd har-cnn-lstm-streamlit
+
+## Install Dependencies
+`pip install -r requirements.txt`
+
+## Usage
+## 1. Train the Model (Jupyter Notebook)
+Open the notebook:
+  `jupyter notebook har-project.ipynb`
+Train the model and export the .h5 file.
+
+## 2. Run Streamlit App
+`streamlit run app.py`
+This opens the web app where you can upload test CSV files.
+
+## 3. Upload Test CSV
+Format: 561 features per row.
+Model returns activity predictions like WALKING, SITTING, STANDING, etc.
+You can download the result as a CSV file.
+
+## Project Structure
+```har-cnn-lstm-streamlit/
+├── app.py                 # Streamlit web app
+├── har-project.ipynb      # Training notebook
+├── har_cnn_lstm_model.h5  # Trained model
+├── requirements.txt       # Dependencies
+└── README.md              # Project documentation```
+
